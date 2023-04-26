@@ -3,8 +3,8 @@ permissions:
   contents: write
 on:
   push:
-    branches:
-      - master
+    tags:
+      - "v*"
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
@@ -23,10 +23,6 @@ jobs:
 
       - name: Build
         run: yarn pkg
-
-      - name: "Build Changelog"
-        id: build_changelog
-        uses: mikepenz/release-changelog-builder-action@v3.7.0
 
       - name: Create Release and Upload Release Asset
         uses: softprops/action-gh-release@v1
