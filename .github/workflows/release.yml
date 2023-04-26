@@ -39,3 +39,4 @@ jobs:
           draft: true
           prerelease: true
           files: release/*.tar.gz
+
